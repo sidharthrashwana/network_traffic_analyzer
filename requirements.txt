@@ -1,0 +1,4 @@
+greenlet==2.0.2
+scapy==2.5.0
+SQLAlchemy==2.0.19
+typing_extensions==4.7.1
