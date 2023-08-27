@@ -1,12 +1,11 @@
 
 **Description**
 
-This project is used to capture network traffix passing through an interface.
+This project is used to capture network traffic passing through an interface and store frames onto the DB.
 
 **Tech Stack**
 
 Backend :  Python + SqlAlchemy
-
 
 **Run**
 
