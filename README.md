@@ -14,7 +14,9 @@ Backend :  Python + SqlAlchemy
 2. source venv/bin/activate
 3. pip install -r requirements.txt
 4. install packages from sudo_requirements.txt
-
+5. specify interface connected to internet in sniff_packets()
+6. Run as :
+    `sudo python3.9 network_analyzer.py`
 
 **Disclaimer**
 
