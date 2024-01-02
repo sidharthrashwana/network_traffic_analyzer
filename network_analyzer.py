@@ -4,6 +4,7 @@ import network_analyzer_db as network_analyzer
 from queue import Queue
 import threading
 import atexit
+import sys
 # Create a thread-safe queue to store captured packets as dictionaries
 captured_packets_queue = Queue()
 count =0
@@ -111,8 +112,15 @@ def insert_packets():
 
 def sniff_packets():
     while True:
-        sniff(iface="ens33", prn=packet_handler, count=1)
-       
+        if len(sys.argv) < 3:
+            print('Usage: sudo python3 network_analyzer.py --interface <interface>')
+            sys.exit()
+        elif sys.argv[1] == '--interface':
+            sniff(iface=str(sys.argv[2]), prn=packet_handler, count=1)
+        else:
+            sys.exit()
+            
+
 thread1 = threading.Thread(target=sniff_packets)
 thread2 = threading.Thread(target=insert_packets)
 
